@@ -1,0 +1,36 @@
+{
+  "page": {
+    "weather": {
+      "yearly.weather.data": "연도별 날씨"
+    }
+  },
+  "component": {
+    "forecast": {
+      "table": {
+        "temperature": "기온",
+        "max.temperature": "최고 기온",
+        "min.temperature": "최저 기온",
+        "rainfall": "강수량",
+        "cloud.avg": "평균 운량"
+      }
+    }
+  },
+  "city": {
+    "seoul": "서울특별시",
+    "incheon": "인천광역시",
+    "gyeonggi-do": "경기도",
+    "gangwon-do": "강원도",
+    "chungcheongbuk-do": "충청북도",
+    "chungcheongnam-do": "충청남도",
+    "daejeon": "대전광역시",
+    "jeollabuk-do": "전라북도",
+    "jeollanam-do": "전라남도",
+    "gwangju": "광주광역시",
+    "gyeongsangbuk-do": "경상북도",
+    "gyeongsangnam-do": "경상남도",
+    "daegu": "대구광역시",
+    "ulsan": "울산광역시",
+    "busan": "부산광역시",
+    "jeju-do": "제주도"
+  }
+}

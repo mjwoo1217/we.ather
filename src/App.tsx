@@ -1,5 +1,5 @@
-import Navbar from "./components/Navbar.jsx";
-import Weather from "./components/Weather.jsx";
+import {Weather} from "./pages";
+import {Navbar} from "./components";
 
 const App = () => {
     return (
@@ -11,7 +11,7 @@ const App = () => {
 
             <div className="container mx-auto px-8">
                 <Navbar/>
-                <Weather />
+                <Weather/>
             </div>
         </div>
     )

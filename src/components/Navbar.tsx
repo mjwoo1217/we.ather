@@ -2,7 +2,7 @@ import logo from "../assets/logo.png"
 import {useState} from "react";
 import { MdMenuOpen } from "react-icons/md";
 import { MdMenu } from "react-icons/md";
-import {LINKS} from "../constants/index.js";
+import {LINKS} from "../constants";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
