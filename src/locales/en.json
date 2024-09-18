@@ -11,7 +11,8 @@
         "max.temperature": "최고 기온",
         "min.temperature": "최저 기온",
         "rainfall": "강수량",
-        "cloud.avg": "평균 운량"
+        "cloud.avg": "평균 운량",
+        "startDate": "날짜"
       }
     }
   },
