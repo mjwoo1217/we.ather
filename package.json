@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-map/south-korea": "^1.0.5",
     "0g": "^0.4.2",
     "axios": "^1.7.7",
     "date-fns": "^4.1.0",
