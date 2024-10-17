@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-map/south-korea": "^1.0.5",
     "0g": "^0.4.2",
     "axios": "^1.7.7",
+    "d3-geo": "^3.1.1",
     "date-fns": "^4.1.0",
     "i18next": "^23.15.1",
     "npm": "^10.8.3",
@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/d3-geo": "^3.1.0",
+    "@types/geojson": "^7946.0.14",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
@@ -39,6 +41,6 @@
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.6.2",
-    "vite": "^5.4.1"
+    "vite": "5.4.6"
   }
 }

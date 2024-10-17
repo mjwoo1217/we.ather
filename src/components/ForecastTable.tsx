@@ -1,23 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import {useTranslation} from 'react-i18next';
+// ForecastTable.tsx
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import {forecastAxios} from '../api';
-import {Forecast, ForecastData} from "../types/forecast";
-import {ForecastRequest} from "../dto";
-import {format} from 'date-fns';
+import { forecastAxios } from '../api';
+import { Forecast, ForecastData } from "../types/forecast";
+import { ForecastRequest } from "../dto";
+import { format } from 'date-fns';
 
 const formatDate = (dateString: string) => {
     const year = dateString.substring(0, 4);
     const monthDay = `${dateString.substring(4, 6)}/${dateString.substring(6, 8)}`;
-    return {year, monthDay};
+    return { year, monthDay };
 };
 
 const groupByYear = (data: Forecast[]) => {
     return data.reduce((acc, item) => {
-        const {year, monthDay} = formatDate(item.date);
+        const { year, monthDay } = formatDate(item.date);
         if (!acc[year]) {
-            acc[year] = {year, dates: {} as Record<string, Forecast>};
+            acc[year] = { year, dates: {} as Record<string, Forecast> };
         }
         acc[year].dates[monthDay] = item;
         return acc;
@@ -44,20 +45,25 @@ const useFetchForecastData = (request: ForecastRequest) => {
             }
         };
 
-        fetchForecastData();
+        fetchForecastData().then(r => r);
     }, [request]);
 
-    return {forecastData, loading, error};
+    return { forecastData, loading, error };
 };
 
 interface ForecastTableProps {
     initialRequest: ForecastRequest;
 }
 
-const ForecastTable: React.FC<ForecastTableProps> = ({initialRequest}) => {
-    const {t} = useTranslation();
+const ForecastTable: React.FC<ForecastTableProps> = ({ initialRequest }) => {
+    const { t } = useTranslation();
     const [request, setRequest] = useState<ForecastRequest>(initialRequest);
-    const {forecastData, loading, error} = useFetchForecastData(request);
+    const { forecastData, loading, error } = useFetchForecastData(request);
+
+    // initialRequest가 변경될 때마다 request 상태를 업데이트
+    useEffect(() => {
+        setRequest(initialRequest);
+    }, [initialRequest]);
 
     // Date 변경 핸들러
     const handleDateChange = (date: Date | null) => {
